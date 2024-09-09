@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 
 const Plans = () => {
+  const navigate=useNavigate()
   const [items ,setItems] = useState( [
     {
       "name": "Bronze",
@@ -48,7 +50,10 @@ const Plans = () => {
       ]
     }
   ]);
-  const [firstPlan, secondPlan, thirdPlan] = items;
+
+  const planSelected=(plan: any)=>{
+      navigate("/signin-account")
+  }
 
   return (
     
@@ -77,7 +82,7 @@ const Plans = () => {
                 <ul role="list" className="space-y-5 my-7">
                   { item.features.map((feature)=>
                     <li className="flex items-center">
-                        <svg className="flex-shrink-0 w-4 h-4 text-blue-700 dark:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                        <svg className="flex-shrink-0 w-4 h-4 text-blue-500 dark:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                             <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
                         </svg>
                         <span className="text-base font-normal leading-tight text-gray-900 dark:text-gray-400 ms-3">{feature}</span>
@@ -86,7 +91,7 @@ const Plans = () => {
                     }
                     
                 </ul>
-                <button type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-200 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-900 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center">Choose plan</button>
+                <button type="button" className="text-white bg-blue-500 hover:bg-blue-600 focus:ring-4 focus:outline-none focus:ring-blue-200 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-900 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center" onClick={()=>{planSelected(item)}}>Choose plan</button>
             </div>
             )
             }
