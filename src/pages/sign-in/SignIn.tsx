@@ -2,8 +2,22 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { WebHeader } from '../../components/header'
 import { Logo } from '../../components/logo';
+import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
+import { googleLogin } from '../../services/ServiceService';
+
 
 const SignIn= () => {
+
+
+  const handleLoginSuccess = async(response: any) => {
+    const token = response.credential;
+    let resp=await googleLogin({"token": token})
+
+        
+    localStorage.setItem('token', resp.data.token);
+            // Redirect or update UI
+         };
+
   return (
     
     <div
@@ -52,8 +66,17 @@ const SignIn= () => {
                                   </button>
 
                                   <p className="mt-4 text-center text-gray-600 dark:text-gray-400">or sign in with</p>
+                                  <GoogleOAuthProvider clientId="your-google-client-id">
+                                      <GoogleLogin
+                                          text={"signin_with"}
+                                          onSuccess={handleLoginSuccess}
+                                          onError={() => {
+                                              console.log('Login failed');
+                                          }}
+                                      />
+                                  </GoogleOAuthProvider>
 
-                                  <a href="#" className="flex items-center justify-center px-6 py-3 mt-4 text-gray-600 transition-colors duration-300 transform border rounded-lg dark:border-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                  {/* <a href="#" className="flex items-center justify-center px-6 py-3 mt-4 text-gray-600 transition-colors duration-300 transform border rounded-lg dark:border-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600">
                                     <svg className="w-6 h-6 mx-2" viewBox="0 0 40 40">
                                         <path d="M36.3425 16.7358H35V16.6667H20V23.3333H29.4192C28.045 27.2142 24.3525 30 20 30C14.4775 30 10 25.5225 10 20C10 14.4775 14.4775 9.99999 20 9.99999C22.5492 9.99999 24.8683 10.9617 26.6342 12.5325L31.3483 7.81833C28.3717 5.04416 24.39 3.33333 20 3.33333C10.7958 3.33333 3.33335 10.7958 3.33335 20C3.33335 29.2042 10.7958 36.6667 20 36.6667C29.2042 36.6667 36.6667 29.2042 36.6667 20C36.6667 18.8825 36.5517 17.7917 36.3425 16.7358Z" fill="#FFC107" />
                                         <path d="M5.25497 12.2425L10.7308 16.2583C12.2125 12.59 15.8008 9.99999 20 9.99999C22.5491 9.99999 24.8683 10.9617 26.6341 12.5325L31.3483 7.81833C28.3716 5.04416 24.39 3.33333 20 3.33333C13.5983 3.33333 8.04663 6.94749 5.25497 12.2425Z" fill="#FF3D00" />
@@ -62,7 +85,7 @@ const SignIn= () => {
                                     </svg>
 
                                     <span className="mx-2">Sign in with Google</span>
-                                </a>
+                                </a> */}
 
                                   <div className="mt-6 text-center">
                                       <a href="/create-account" className="text-sm text-blue-500 hover:underline dark:text-blue-400">
