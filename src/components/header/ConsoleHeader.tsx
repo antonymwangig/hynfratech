@@ -1,6 +1,4 @@
-import { Link } from 'react-router-dom';
-import DropdownMessage from './DropdownMessage';
-import DropdownNotification from './DropdownNotification';
+
 import DropdownUser from './DropdownUser';
 import {Logo} from '../logo'
 
@@ -94,11 +92,7 @@ const ConsoleHeader = (props: {
         </div>
 
         <div className="flex items-center gap-3 2xsm:gap-7">
-          <ul className="flex items-center gap-2 2xsm:gap-4">
-            <DropdownNotification />
-            <DropdownMessage />
-            </ul>
-
+          
           <DropdownUser />
           </div>
       </div>
