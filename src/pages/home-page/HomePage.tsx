@@ -11,13 +11,13 @@ const HomePage=()=> {
   
   useEffect(() => {
   }, [])
-
+  
 
 
   return (
     <div
       className={
-        'relative mx-auto my-0 flex min-h-screen max-w-screen-2xl flex-col overflow-hidden bg-white shadow-2xl'
+        'relative mx-auto my-0 flex min-h-screen  flex-col overflow-hidden bg-white shadow-2xl'
        }
     >
       <WebHeader />
