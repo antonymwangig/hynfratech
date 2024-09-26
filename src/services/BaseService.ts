@@ -3,9 +3,16 @@ import deepParseJson from '../utils/deepParseJson'
 
 const unauthorizedCode = [401]
 
+// const BaseService = axios.create({
+//     timeout: 60000,
+//     baseURL: "http://localhost:8001/api/v1/" ,
+// })
+
+
+
 const BaseService = axios.create({
     timeout: 60000,
-    baseURL: "http://localhost:8000/api/v1/" ,
+    baseURL: "http://antonymwangig.site/api/v1/" ,
 })
 
 
@@ -14,16 +21,8 @@ const BaseService = axios.create({
 BaseService.interceptors.request.use(
     (config) => {
         try{
-        const rawPersistData = sessionStorage.getItem("USER")
-        const persistData = deepParseJson(rawPersistData)
+        let accessToken =    localStorage.getItem('auth_token');
 
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        let accessToken = (persistData as any).token
-
-        // if (!accessToken) {
-        //     const { auth } = store.getState()
-        //     accessToken = auth.session.token
-        // }
 
         if (accessToken) {
             config.headers[

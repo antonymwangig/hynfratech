@@ -1,6 +1,6 @@
 import VMTable from './VMTable';
 
-const Dashboard = () => {
+const MySpace = () => {
   return (
     <>
 
@@ -11,4 +11,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default MySpace;

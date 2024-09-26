@@ -5,6 +5,8 @@ import type { ReactNode } from 'react'
 import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import Plans from './Plans'
+import ServerIconOne from '../../components/icons/ServerIconOne'
+import { ConsoleTerminal } from '../../components/console-terminal'
 
 const HomePage=()=> {
 
@@ -31,7 +33,7 @@ const HomePage=()=> {
                   <h1 className="mb-4 mt-0 text-4xl font-bold md:text-5xl " >
                   Hynfra Technologies
                   </h1>
-                  <p className="prose prose-xl m-auto text-gray-500" >
+                  <p className="prose prose-xl m-auto text-gray-600" >
                   Hynfra Technologies is a Managed Services and Cloud Provider with a combination of expertise, methodologies and innovative delivery models. We are uniquely positioned to help you achieve your specific goals using the appropriate combination of technologies.</p>
                   <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                     <div className="rounded-md shadow">
@@ -104,10 +106,16 @@ const HomePage=()=> {
                         <circle cx="200" cy="200" r="200" fill="url(#ball-1-a)" fillRule="evenodd" />
                       </svg>
                     </div>
+                    {/* <div
+                      className="absolute z-9 top-20 h-29 left-16 hidden drop-shadow-2xl lg:block"
+                    >
+                   
+                   </div> */}
                     <div
                       className="hero-ball hero-ball-2 absolute left-16 top-72 drop-shadow-2xl lg:-left-16 lg:top-80"
                      
                     >
+                     
                       <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
                         <defs>
                           <radialGradient
@@ -128,7 +136,10 @@ const HomePage=()=> {
                         <circle cx="100" cy="100" r="100" fill="url(#ball-2-a)" fillRule="evenodd" />
                       </svg>
                     </div>
-                    <div  className="hero-illustration-browser drop-shadow-2xl">
+                    <div  className="hero-illustration-browser drop-shadow-2xl relative">
+                      <div className='absolute h-full w-full top-8'>
+                            <ConsoleTerminal/>
+                    </div>
                       <svg
                         className="ml-auto max-w-screen-sm lg:max-w-none"
                         width="800"
@@ -136,6 +147,7 @@ const HomePage=()=> {
                         viewBox="0 0 800 450"
                         xmlns="http://www.w3.org/2000/svg"
                       >
+                        
                         <defs>
                           <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="browser-a">
                             <stop stopColor="#F89595" offset="0%" />
@@ -149,99 +161,7 @@ const HomePage=()=> {
                             <stop stopColor="#83E78D" offset="0%" />
                             <stop stopColor="#4BCA55" offset="100%" />
                           </linearGradient>
-                          <filter
-                            x="-30%"
-                            y="-42.9%"
-                            width="184%"
-                            height="220%"
-                            filterUnits="objectBoundingBox"
-                            id="browser-d"
-                          >
-                            <feOffset dx="24" dy="24" in="SourceAlpha" result="shadowOffsetOuter1" />
-                            <feGaussianBlur stdDeviation="24" in="shadowOffsetOuter1" result="shadowBlurOuter1" />
-                            <feColorMatrix
-                              values="0 0 0 0 0.866666667 0 0 0 0 0.905882353 0 0 0 0 0.937254902 0 0 0 0.56 0"
-                              in="shadowBlurOuter1"
-                              result="shadowMatrixOuter1"
-                            />
-                            <feMerge>
-                              <feMergeNode in="shadowMatrixOuter1" />
-                              <feMergeNode in="SourceGraphic" />
-                            </feMerge>
-                          </filter>
-                          <linearGradient x1="19.946%" y1="72.147%" x2="73.772%" y2="18.374%" id="browser-e">
-                            <stop stopColor="#eef2ff" offset="0%" />
-                            <stop stopColor="#c7d2fe" offset="100%" />
-                          </linearGradient>
-                          <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="browser-f">
-                            <stop stopColor="#c7d2fe" offset="0%" />
-                            <stop stopColor="#818cf8" offset="100%" />
-                          </linearGradient>
-                          <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="browser-g">
-                            <stop stopColor="#c7d2fe" offset="0%" />
-                            <stop stopColor="#a5b4fc" offset="100%" />
-                          </linearGradient>
-                          <linearGradient x1="94.808%" y1="-15.701%" x2="6.924%" y2="82.567%" id="browser-h">
-                            <stop stopColor="#6ee7b7" stopOpacity="0" offset="0%" />
-                            <stop stopColor="#6ee7b7" offset="100%" />
-                          </linearGradient>
-                          <linearGradient x1="1.733%" y1="-10.509%" y2="77.375%" id="browser-i">
-                            <stop stopColor="#6EFACC" stopOpacity="0" offset="0%" />
-                            <stop stopColor="#6EFACC" offset="100%" />
-                          </linearGradient>
-                          <linearGradient x1="92.458%" y1="5.866%" x2="0%" y2="100%" id="browser-j">
-                            <stop stopColor="#6ee7b7" offset="0%" />
-                            <stop stopColor="#6ee7b7" stopOpacity="0" offset="100%" />
-                          </linearGradient>
-                          <linearGradient x1="92.458%" y1="5.866%" x2="0%" y2="100%" id="browser-k">
-                            <stop stopColor="#6ee7b7" stopOpacity="0" offset="0%" />
-                            <stop stopColor="#6ee7b7" stopOpacity="0.513" offset="48.724%" />
-                            <stop stopColor="#6ee7b7" stopOpacity="0" offset="100%" />
-                          </linearGradient>
-                          <linearGradient x1="92.458%" y1="5.866%" x2="0%" y2="100%" id="browser-l">
-                            <stop stopColor="#6ee7b7" stopOpacity="0" offset="0%" />
-                            <stop stopColor="#6ee7b7" stopOpacity="0.513" offset="47.494%" />
-                            <stop stopColor="#6ee7b7" stopOpacity="0" offset="100%" />
-                          </linearGradient>
-                          <filter
-                            x="-23.1%"
-                            y="-21.8%"
-                            width="192.3%"
-                            height="187.3%"
-                            filterUnits="objectBoundingBox"
-                            id="browser-m"
-                          >
-                            <feOffset dx="24" dy="24" in="SourceAlpha" result="shadowOffsetOuter1" />
-                            <feGaussianBlur stdDeviation="12" in="shadowOffsetOuter1" result="shadowBlurOuter1" />
-                            <feColorMatrix
-                              values="0 0 0 0 0.866666667 0 0 0 0 0.905882353 0 0 0 0 0.937254902 0 0 0 0.56 0"
-                              in="shadowBlurOuter1"
-                              result="shadowMatrixOuter1"
-                            />
-                            <feMerge>
-                              <feMergeNode in="shadowMatrixOuter1" />
-                              <feMergeNode in="SourceGraphic" />
-                            </feMerge>
-                          </filter>
-                          <linearGradient x1="100%" y1="50%" x2="-57.904%" y2="50%" id="browser-n">
-                            <stop stopColor="#c7d2fe" offset="0%" />
-                            <stop stopColor="#818cf8" offset="100%" />
-                          </linearGradient>
-                          <filter
-                            x="-500%"
-                            y="-500%"
-                            width="1000%"
-                            height="1000%"
-                            filterUnits="objectBoundingBox"
-                            id="dropshadow-1"
-                          >
-                            <feOffset dy="16" in="SourceAlpha" result="shadowOffsetOuter" />
-                            <feGaussianBlur stdDeviation="24" in="shadowOffsetOuter" result="shadowBlurOuter" />
-                            <feColorMatrix
-                              values="0 0 0 0 0.10 0 0 0 0 0.17 0 0 0 0 0.21 0 0 0 0.22 0"
-                              in="shadowBlurOuter"
-                            />
-                          </filter>
+                          
                         </defs>
                         <g fill="none" fillRule="evenodd">
                           <rect width="800" height="450" rx="2" fill="#ffffff" filter="url(#dropshadow-1)" />
@@ -290,23 +210,9 @@ const HomePage=()=> {
                               transform="translate(169 54)"
                             />
                           </g>
-                          <g
-                            filter="url(#browser-m)"
-                            transform="scale(-1 1) rotate(45 -338.122 -406.594)"
-                            fillRule="nonzero"
-                          >
-                            <path
-                              d="M52 0L.511 70.268a2.668 2.668 0 0 0-.478 1.987 2.63 2.63 0 0 0 1.076 1.732L52 110V0z"
-                              fill="url(#browser-e)"
-                            />
-                            <path
-                              d="M103.49 70.27L52 0v110l50.89-36.011a2.637 2.637 0 0 0 1.077-1.732 2.669 2.669 0 0 0-.476-1.987z"
-                              fill="url(#browser-n)"
-                            />
-                          </g>
                         </g>
                       </svg>
-                    </div>
+                      </div>
                     <div
                       className="hero-ball hero-ball-3 absolute drop-shadow-2xl"
                       
@@ -336,6 +242,7 @@ const HomePage=()=> {
                       className="hero-ball hero-ball-4 absolute -top-5 left-44 lg:-top-20 lg:left-72"
                       
                     >
+
                       <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
                         <defs>
                           <radialGradient
@@ -382,6 +289,7 @@ const HomePage=()=> {
                       className="hero-ball hero-ball-5 absolute lg:-bottom-20 lg:left-80"
                     
                     >
+
                       <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <defs>
                           <radialGradient

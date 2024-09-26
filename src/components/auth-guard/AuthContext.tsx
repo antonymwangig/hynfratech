@@ -1,5 +1,5 @@
 // src/context/AuthContext.tsx
-import React, { createContext, useState, useContext, ReactNode } from 'react';
+import React, { createContext, useState, useContext, ReactNode, useEffect } from 'react';
 
 interface AuthContextType {
   isAuthenticated: boolean;
@@ -15,6 +15,13 @@ interface AuthProviderProps {
 
 export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
+  useEffect(()=>{
+    if(localStorage.getItem('auth_token')){
+      setIsAuthenticated(true);
+    }else{
+      setIsAuthenticated(false);
+    }
+  },[isAuthenticated])
 
   const login = (token: string) => {
     localStorage.setItem('auth_token', token);

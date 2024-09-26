@@ -1,11 +1,18 @@
 import { lazy } from 'react';
-const Dashboard = lazy(() => import('../pages/dashboard/Dashboard'));
+const MySpace = lazy(() => import('../pages/my-space/MySpace'));
+const NewVM = lazy(() => import('../pages/new-vm/NewVM'));
 const coreRoutes = [
   {
-    path: '/main/dashboard',
-    title: 'Dashboard',
-    component: Dashboard,
+    path: '/console/my-space',
+    title: 'My Space',
+    component: MySpace,
   },
+  {
+    path: '/console/new-vm',
+    title: 'New VM',
+    component: NewVM,
+  },
+ 
   ];
 
 const routes = [...coreRoutes];

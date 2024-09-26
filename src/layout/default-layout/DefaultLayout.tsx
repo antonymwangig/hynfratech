@@ -2,7 +2,9 @@ import React, { useState, ReactNode } from 'react';
 import{ ConsoleHeader} from '../../components/header';
 import {Sidebar} from '../../components/sidebar';
 
-const DefaultLayout: React.FC<{ children: ReactNode }> = ({ children }) => {
+import { Outlet, useNavigate } from 'react-router-dom';
+
+const DefaultLayout: React.FC<any> = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
@@ -13,7 +15,8 @@ const DefaultLayout: React.FC<{ children: ReactNode }> = ({ children }) => {
           <ConsoleHeader sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
           <main>
             <div className="mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10">
-              {children}
+            <Outlet />
+
             </div>
           </main>
         </div>
