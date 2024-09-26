@@ -12,7 +12,7 @@ const unauthorizedCode = [401]
 
 const BaseService = axios.create({
     timeout: 60000,
-    baseURL: "http://antonymwangig.site/api/v1/" ,
+    baseURL: "https://antonymwangig.site/api/v1/" ,
 })
 
 
