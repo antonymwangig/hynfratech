@@ -13,12 +13,14 @@ const VMTable = () => {
 
 
   const getMyVmsFunc= async(vm: any)=>{
+
    var resp= await getVMState(vm); 
+   console.log(resp)
   }
   const getMyVms = async(query: any)=>{
     var resp: any= await  getVirtualMachines(query);
     setItems(resp.data)
-    items.forEach((vm: any)=>{
+    resp.data.forEach((vm: any)=>{
         getMyVmsFunc(vm)
      })
 

@@ -18,7 +18,7 @@ interface TypePaymentMethod {
 
 
 
-const PaymentForm = (props:{plan: any,submit: any}) => {
+const PaymentForm = (props:{plan: any,submit: any, data: any}) => {
   const {
     register,
     handleSubmit,
@@ -59,6 +59,16 @@ const PaymentForm = (props:{plan: any,submit: any}) => {
 
 
   useEffect(()=>{
+
+      
+        setValue("full_name", "Antony Mwangi Njoroge");
+        setValue("card_number", "343892842342394");
+        setValue("expiration", "12/28");
+        setValue("card_type", "VISA");
+        setValue("cvv", "234");
+      
+    
+      setValue
       getPaymentMethodFunc()
   },[])
 

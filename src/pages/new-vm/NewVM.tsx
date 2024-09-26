@@ -169,7 +169,7 @@ const NewVM = () => {
 
             { step==1 && (
                 <div>
-                    <PaymentForm plan={plan} submit={paymentInfo} />
+                    <PaymentForm plan={plan} data={cardData} submit={paymentInfo} />
                 </div>
             
             )}
